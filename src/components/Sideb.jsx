@@ -79,7 +79,7 @@ function Sidebar({ setmp }) {
                         </span>
                     </a>
                     <div className="flex flex-col">
-                        <a href="https://www.linkedin.com/in/your-link" className="relative group text-white font-medium">Garvit Goyal
+                        <a href="https://www.linkedin.com/in/garvit-goyal-00073733a/" className="relative group text-white font-medium">Garvit Goyal
                             <span className="absolute -top-0.5 left-30 -translate-x-1/2 scale-0 group-hover:scale-100 text-white text-xs p-1 rounded transition-all duration-200 whitespace-nowrap lnk">
                                 LinkedIn
                             </span>
