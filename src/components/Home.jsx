@@ -1,0 +1,202 @@
+import React from "react";
+import logoMMM from "../assets/logoMMM.png"
+import heroM from "../assets/heroM.png"
+import './Home.css'
+function Home() {
+    return (
+        <>
+            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white">
+                <div className="w-full h-full flex justify-between items-center pl-9 pr-9 mb-16">
+                    <img src={logoMMM} alt="" className="h-14 w-auto" />
+                    <div className="flex gap-1 items-center justify-center">
+                        <button className='text-purple-400 text-sm font-sans rounded-2xl font-bold hover:text-black duration-300'>Login</button>
+                        <p className="text-purple-400 font-bold">/</p>
+                        <button className='bg-purple-400 p-2 text-sm font-sans rounded-xl font-bold hover:bg-black hover:text-purple-400 duration-300 ease-in'>Sign-up</button>
+                    </div>
+                </div>
+                <div className="flex w-full h-full items-center justify-evenly gap-10 pl-8 mt-10">
+                    <div className="w-full pl-32">
+                        <p className="text-3xl font-bold leading-tight">
+                            All{" "}
+                            <span className="text-purple-400 typing">Student tools,</span>
+                            <br />
+                            one smart place.
+                        </p>
+                    </div>
+                    <div className="heroWrapper w-full pl-40 relative">
+                        <div className="heroMB w-full h-40 rounded-l-full"></div>
+                        <img src={heroM} alt="" className="imghero h-60 w-auto absolute bottom-0 right-14" />
+                    </div>
+                </div>
+
+                <p className="text-4xl font-bold inline text-purple-400 w-220">FEATURES</p>
+                <div className="w-full flex items-center justify-evenly">
+                    <div className="relative block group  ">
+                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-white">
+                            <div className="p-6">
+                                <p className="mt-4 text-lg font-medium">SGPA Calcu</p>
+                                <p className="mt-1 text-xs">“Calculate semester performance using grades and credits.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative block group  ">
+                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-white">
+                            <div className="p-6">
+                                <p className="mt-4 text-lg font-medium">Cgpa Predic</p>
+                                <p className="mt-1 text-xs">“Estimate your overall CGPA using past results and upcoming semesters.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative block group  ">
+                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-white">
+                            <div className="p-6">
+                                <p className="mt-4 text-lg font-medium">Notes Area</p>
+                                <p className="mt-1 text-xs">“Keep all your academic notes easily accessible and well organized.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative block group  ">
+                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-white">
+                            <div className="p-6">
+                                <p className="mt-4 text-lg font-medium">BMI Calcu</p>
+                                <p className="mt-1 text-xs">“Check your BMI using height and weight to track your physical health.”</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="relative">
+                <span className="absolute left-8 w-222 inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                <div className="w-221 ml-8 mt-2 transition p-6 border-2 border-black rounded-lg bg-purple-400 text-white -translate-x-1.5 -translate-y-2.5">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">UNIVO</h1>
+                    <p class="max-w-4xl text-black text-lg">
+                        Your Academic Control Panel — a smart utility platform built to help students calculate, track,
+                        and manage their academic life efficiently.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full mx-auto px-8 py-16">
+                <div class="mb-14">
+                    <h2 class="text-4xl font-bold text-purple-400 mb-4">About UNIVO</h2>
+                    <p class="text-black leading-relaxed w-full">
+                        UNIVO is designed for students who want clarity and control over their academics.
+                        Instead of switching between multiple apps and manual calculations,
+                        UNIVO centralizes essential academic tools into a single, easy-to-use. <br />
+                        Health Calcu Tools - Coming soon
+                    </p>
+                </div>
+
+
+                <div>
+                    <h2 class="text-3xl font-bold text-purple-400 mb-8">
+                        What Problems UNIVO Solves
+                    </h2>
+
+                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
+                            <h3 class="font-semibold text-white mb-2">Scattered Tools</h3>
+                            <p class="text-sm">
+                                No more switching between calculators, notes apps etc. many tools live inside UNIVO.
+                            </p>
+                        </div>
+
+                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
+                            <h3 class="font-semibold text-white mb-2">Manual Calculations</h3>
+                            <p class="text-sm">
+                                Manual SGPA and CGPA calculations are error-prone. UNIVO gives instant and accurate results.
+                            </p>
+                        </div>
+
+                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
+                            <h3 class="font-semibold text-white mb-2">Lack of Academic Planning</h3>
+                            <p class="text-sm">
+                                Students don’t know how grades affect CGPA. UNIVO helps predict and plan ahead.
+                            </p>
+                        </div>
+
+                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
+                            <h3 class="font-semibold text-white mb-2">No Central Resource Hub</h3>
+                            <p class="text-sm">
+                                Important notes and links get lost.
+                                UNIVO becomes your personal academic vault.
+                            </p>
+                        </div>
+
+                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
+                            <h3 class="font-semibold text-white mb-2">Overcomplicated Systems</h3>
+                            <p class="text-sm">
+                                Existing platforms are heavy and confusing.
+                                UNIVO focuses on speed, simplicity, and clarity.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
+
+                {/* Top / Identity */}
+                <div className="flex flex-col items-center justify-center pt-2">
+                    <p className="text-white text-sm">
+                        Made with <span className="text-red-500">❤️</span> by Garv
+                    </p>
+                    <p className=" text-gray-400 text-xs">
+                        Learn • Build • Improve
+                    </p>
+                </div>
+
+                {/* Middle / Info */}
+                <div className="flex w-full h-[60%] justify-evenly p-5 text-sm text-gray-400">
+
+                    <div className="w-[31%]">
+                        <h3 className="text-white mb-2 text-lg font-semibold">About</h3>
+                        <p>
+                            B.Tech student building web applications using React & Tailwind CSS.
+                        </p>
+                    </div>
+
+                    <div className="w-[31%]">
+                        <h3 className="text-white mb-2 text-lg font-semibold">Tech Stack</h3>
+                        <ul className="space-y-1">
+                            <li><a href="https://react.dev/" className="hover:text-purple-300 transition">React</a></li>
+                            <li><a href="https://vite.dev/" className="hover:text-purple-300 transition">Vite</a></li>
+                            <li><a href="https://tailwindcss.com/" className="hover:text-purple-300 transition">Tailwind CSS</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="w-[31%] text-gray-400 text-sm">
+                        <h3 className="text-white mb-2 text-lg font-semibold">Contact</h3>
+                        <p className="mb-1">
+                            Open to feedback, suggestions & opportunities
+                        </p>
+                        <p className="inline">Email : </p>
+                        <a href="mailto:garvitpersonal29557@gmail.com"
+                            className="hover:text-purple-300 transition">
+                            garvitpersonal29557@gmail.com
+                        </a>
+                    </div>
+
+
+                </div>
+
+                {/* Bottom / Copyright */}
+                <div className="border-t border-neutral-800 p-3 text-center text-xs text-white">
+                    © {new Date().getFullYear()} Garvit Goyal. All rights reserved.
+                </div>
+
+            </footer>
+
+        </>
+    )
+}
+export default Home;

@@ -1,0 +1,44 @@
+.heroMB {
+  background-color: #C084FC;
+  transition: background-color 0.2s ease;
+}
+
+.heroWrapper:hover .heroMB {
+  background-color: #FFC632;
+}
+.typing {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+
+  width: 0;
+  border-right: 2px solid #C084FC;
+
+  /* 🔑 fixes */
+  vertical-align: baseline;
+  line-height: 1em;
+  box-sizing: content-box;
+
+  animation: typeLoop 10s steps(14, end) infinite;
+}
+
+@keyframes typeLoop {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 11.5ch;
+  }
+  80% {
+    width: 11.5ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.typing {
+  display: inline-flex;
+  align-items: baseline;
+}
