@@ -7,6 +7,7 @@ import Sgpac from './Sgpac';
 import Cgpac from './Cgpac';
 import Cgpap from './Cgpap';
 import Bmic from './Bmic';
+import Notes from './Notes';
 import './Sideb.css'
 function Sidebar({ setmp }) {
     return (
@@ -39,6 +40,7 @@ function Sidebar({ setmp }) {
                                     onClick={() => setmp(<Cgpap />)}
                                     className="p-2 w-30 hbtn rounded text-xs font-semibold text-white transition-all duration-200 ease-in-out">Cgpa predic</button>
                                 <button
+                                    onClick={()=>{setmp(<Notes/>)}}
                                     className="p-2 w-30 hbtn rounded text-xs font-semibold text-white transition-all duration-200 ease-in-out">Notes Area</button>
                             </div>
                         </div>

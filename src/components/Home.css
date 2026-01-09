@@ -1,11 +1,33 @@
 .heroMB {
   background-color: #C084FC;
-  transition: background-color 0.2s ease;
+  animation: heroMBcolor 6.2s linear infinite;
 }
 
-.heroWrapper:hover .heroMB {
-  background-color: #FFC632;
+@keyframes heroMBcolor {
+  /* Hold purple for ~5s */
+  0% {
+    background-color: #C084FC;
+  }
+  49% {
+    background-color: #C084FC;
+  }
+
+  /* Quick switch to yellow (0.1s approx) */
+  50% {
+    background-color: #FFC632;
+  }
+
+  /* Hold yellow for ~5s */
+  99% {
+    background-color: #FFC632;
+  }
+
+  /* Quick switch back */
+  100% {
+    background-color: #C084FC;
+  }
 }
+
 .typing {
   position: relative;
   display: inline-block;

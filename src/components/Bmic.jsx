@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 function Bmic() {
   const [bmiU, setbmiU] = useState("Not Calculate")
