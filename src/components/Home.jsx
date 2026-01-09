@@ -5,9 +5,9 @@ import './Home.css'
 function Home() {
     return (
         <>
-            <div className="w-full min-h-screen flex flex-col items-center pt-5 justify-evenly bg-white">
-                <div className="w-full h-full flex justify-between items-center pl-9 pr-9 mb-16">
-                    <img src={logoMMM} alt="" className="h-14 w-auto" />
+            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white">
+                <div className="w-full h-28 flex justify-between items-center pl-9 pr-9">
+                    <img src={logoMMM} alt="" className="h-12 w-auto" />
                     <div className="flex gap-1 items-center justify-center">
                         <button className='text-purple-400 text-sm font-sans rounded-2xl font-bold hover:text-black duration-300'>Login</button>
                         <p className="text-purple-400 font-bold">/</p>
@@ -25,60 +25,65 @@ function Home() {
                     </div>
                     <div className="heroWrapper w-full pl-40 relative">
                         <div className="heroMB w-full h-40 rounded-l-full"></div>
-                        <img src={heroM} alt="" className="imghero h-60 w-auto absolute bottom-0 right-14" />
+                        <img src={heroM} alt="" className="imghero h-56 drop-shadow-[0_0_6px_rgba(0,0,0,1)] w-auto absolute bottom-0 right-14" />
                     </div>
                 </div>
 
-                <div className="relative block group  mt-11 mb-11">
-                    <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                    <div className="w-220 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
-                        <div className="p-6">
-                            <p className="mb-4 text-5xl font-bold">UNIVO</p>
-                            <p className="mt-1 max-w-4xl text-lg">Your Academic Control Panel — a smart utility platform built to help students calculate, track,
-                            and manage their academic life efficiently.</p>
+                <div className="w-220 h-[45vh] mt-[2vh] flex items-center justify-center">
+                    <div className="relative block group">
+                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                        <div className="w-220 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                            <div className="p-6">
+                                <p className="mb-4 text-5xl font-bold">UNIVO</p>
+                                <p className="mt-1 max-w-4xl text-lg">Your Academic Control Panel — a smart utility platform built to help students calculate, track,
+                                    and manage their academic life efficiently.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <p className="text-4xl font-bold inline text-purple-400 mb-5 text-start w-221">FEATURES</p>
-                <div className="w-full flex items-center justify-evenly">
-                    <div className="relative block group  ">
-                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
-                            <div className="p-6">
-                                <p className="mt-4 text-lg font-medium">SGPA Calcu</p>
-                                <p className="mt-1 text-xs">“Calculate semester performance using grades and credits.”</p>
+                <div className="w-full flex flex-col items-center justify-evenly bg-white">
+                    <p className="text-4xl font-bold inline text-purple-400 mb-5 w-220">FEATURES</p>
+                    <div className="w-220 flex items-center justify-between">
+                        <div className="relative block group  ">
+                            <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                            <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                                <div className="p-6">
+                                    <p className="mt-4 text-lg font-medium">SGPA Calcu</p>
+                                    <p className="mt-1 text-xs">“Calculate semester performance using grades and credits.”</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="relative block group  ">
-                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
-                            <div className="p-6">
-                                <p className="mt-4 text-lg font-medium">Cgpa Predic</p>
-                                <p className="mt-1 text-xs">“Estimate your overall CGPA using past results and upcoming semesters.”</p>
+                        <div className="relative block group  ">
+                            <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                            <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                                <div className="p-6">
+                                    <p className="mt-4 text-lg font-medium">Cgpa Predic</p>
+                                    <p className="mt-1 text-xs">“Estimate your overall CGPA using past results and upcoming semesters.”</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="relative block group  ">
-                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
-                            <div className="p-6">
-                                <p className="mt-4 text-lg font-medium">Notes Area</p>
-                                <p className="mt-1 text-xs">“Keep all your academic notes easily accessible and well organized.”</p>
+                        <div className="relative block group  ">
+                            <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                            <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                                <div className="p-6">
+                                    <p className="mt-4 text-lg font-medium">Notes Area</p>
+                                    <p className="mt-1 text-xs">“Keep all your academic notes easily accessible and well organized.”</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="relative block group  ">
-                        <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                        <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
-                            <div className="p-6">
-                                <p className="mt-4 text-lg font-medium">BMI Calcu</p>
-                                <p className="mt-1 text-xs">“Check your BMI using height and weight to track your physical health.”</p>
+                        <div className="relative block group  ">
+                            <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
+                            <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                                <div className="p-6">
+                                    <p className="mt-4 text-lg font-medium">BMI Calcu</p>
+                                    <p className="mt-1 text-xs">“Check your BMI using height and weight to track your physical health.”</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="w-full mx-auto px-8 py-16">
