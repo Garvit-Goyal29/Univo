@@ -9,6 +9,7 @@ import Cgpap from './Cgpap';
 import Bmic from './Bmic';
 import Notes from './Notes';
 import './Sideb.css'
+
 function Sidebar({ setmp }) {
     return (
         <>

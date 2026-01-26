@@ -1,15 +1,43 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import logoMMM from "../assets/logoMMM.png"
 import heroM from "../assets/heroM.png"
 import './Home.css'
+import ScrollProgramBar from "./ScrollProgramBar";
+import Login from "./Login";
 function Home() {
+    const [num, setNum] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setNum(prevNum => {
+                if (prevNum == 529) {
+                    return prevNum;
+                }
+                return prevNum + 1;
+            });
+        }, 0);
+
+        return () => clearInterval(interval);
+    }, []);
+    const [dis, setdis] = useState("block");
+    const [showLogin, setShowLogin] = useState("none");
+    function addlogin() {
+        setdis("none");        // Home hide
+        setShowLogin("block"); // Login show
+    }
+
     return (
         <>
-            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white">
+            <ScrollProgramBar />
+            <div style={{ display: showLogin }}>
+                <Login />
+            </div>
+            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white" style={{ display: dis }} >
                 <div className="w-full h-28 flex justify-between items-center pl-9 pr-9">
                     <img src={logoMMM} alt="" className="h-12 w-auto" />
                     <div className="flex gap-1 items-center justify-center">
-                        <button className='text-purple-400 text-sm font-sans rounded-2xl font-bold hover:text-black duration-300'>Login</button>
+                        <button onClick={addlogin}
+                            className='text-purple-400 text-sm font-sans rounded-2xl font-bold hover:text-black duration-300'>Login</button>
                         <p className="text-purple-400 font-bold">/</p>
                         <button className='bg-purple-400 p-2 text-sm font-sans rounded-xl font-bold hover:bg-black hover:text-purple-400 duration-300 ease-in'>Sign-up</button>
                     </div>
@@ -29,12 +57,16 @@ function Home() {
                     </div>
                 </div>
 
+                <div className="flex items-center justify-start mt-2 pl-7 text-start w-220">
+                    <p className="text-3xl font-bold text-[#FFC632]">{num}+ {"Users"}</p>
+                </div>
+
                 <div className="w-220 h-[45vh] mt-[2vh] flex items-center justify-center">
-                    <div className="relative block group">
+                    <div className="relative block group ml-15">
                         <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                        <div className="w-220 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                        <div className="w-220 transition text-purple-400 border-2 titlediv border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
                             <div className="p-6">
-                                <p className="mb-4 text-5xl font-bold">UNIVO</p>
+                                <p className="mb-4 text-5xl font-bold title">UNIVO</p>
                                 <p className="mt-1 max-w-4xl text-lg">Your Academic Control Panel — a smart utility platform built to help students calculate, track,
                                     and manage their academic life efficiently.</p>
                             </div>
@@ -86,10 +118,10 @@ function Home() {
 
             </div>
 
-            <div class="w-full mx-auto px-8 py-16">
-                <div class="mb-14">
-                    <h2 class="text-4xl font-bold text-purple-400 mb-4">About UNIVO</h2>
-                    <p class="text-black leading-relaxed w-full">
+            <div className="w-full mx-auto px-8 py-16" style={{ display: dis }}>
+                <div className="mb-14">
+                    <h2 className="text-4xl font-bold text-purple-400 mb-4">About UNIVO</h2>
+                    <p className="text-black leading-relaxed w-full">
                         UNIVO is designed for students who want clarity and control over their academics.
                         Instead of switching between multiple apps and manual calculations,
                         UNIVO centralizes essential academic tools into a single, easy-to-use. <br />
@@ -99,44 +131,44 @@ function Home() {
 
 
                 <div>
-                    <h2 class="text-3xl font-bold text-purple-400 mb-8">
+                    <h2 className="text-3xl font-bold text-purple-400 mb-8">
                         What Problems UNIVO Solves
                     </h2>
 
-                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
-                            <h3 class="font-semibold text-white mb-2">Scattered Tools</h3>
-                            <p class="text-sm">
+                        <div className="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-md transition hover:scale-103 duration-300">
+                            <h3 className="font-semibold text-white mb-2">Scattered Tools</h3>
+                            <p className="text-sm">
                                 No more switching between calculators, notes apps etc. many tools live inside UNIVO.
                             </p>
                         </div>
 
-                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
-                            <h3 class="font-semibold text-white mb-2">Manual Calculations</h3>
-                            <p class="text-sm">
+                        <div className="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-md hover:scale-103 transition duration-300">
+                            <h3 className="font-semibold text-white mb-2">Manual Calculations</h3>
+                            <p className="text-sm">
                                 Manual SGPA and CGPA calculations are error-prone. UNIVO gives instant and accurate results.
                             </p>
                         </div>
 
-                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
-                            <h3 class="font-semibold text-white mb-2">Lack of Academic Planning</h3>
-                            <p class="text-sm">
+                        <div className="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-md hover:scale-103 transition duration-300">
+                            <h3 className="font-semibold text-white mb-2">Lack of Academic Planning</h3>
+                            <p className="text-sm">
                                 Students don’t know how grades affect CGPA. UNIVO helps predict and plan ahead.
                             </p>
                         </div>
 
-                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
-                            <h3 class="font-semibold text-white mb-2">No Central Resource Hub</h3>
-                            <p class="text-sm">
+                        <div className="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-md hover:scale-103 transition duration-300">
+                            <h3 className="font-semibold text-white mb-2">No Central Resource Hub</h3>
+                            <p className="text-sm">
                                 Important notes and links get lost.
                                 UNIVO becomes your personal academic vault.
                             </p>
                         </div>
 
-                        <div class="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-lg transition">
-                            <h3 class="font-semibold text-white mb-2">Overcomplicated Systems</h3>
-                            <p class="text-sm">
+                        <div className="bg-purple-400 p-6 rounded-xl shadow-purple-300 hover:shadow-md hover:scale-103 transition duration-300">
+                            <h3 className="font-semibold text-white mb-2">Overcomplicated Systems</h3>
+                            <p className="text-sm">
                                 Existing platforms are heavy and confusing.
                                 UNIVO focuses on speed, simplicity, and clarity.
                             </p>
@@ -147,7 +179,7 @@ function Home() {
 
             </div>
 
-            <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
+            <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between" style={{ display: dis }}>
 
                 {/* Top / Identity */}
                 <div className="flex flex-col items-center justify-center pt-2">

@@ -38,7 +38,7 @@ function Bmic() {
             <form  onSubmit={calcuBMI} className='w-50 h-60 flex flex-col justify-evenly items-start'>
               <label className='text-white'>Weight</label>
               <input
-                className='w-48 border p-1 rounded text-white'
+                className='w-48 border p-1 rounded text-white outline-none focus:outline-none focus:ring-0'
                 type="number"
                 placeholder='In Kg'
                 value={w}
@@ -46,7 +46,7 @@ function Bmic() {
               />
               <label className='text-white'>Height</label>
               <input
-                className='w-48 border p-1 rounded text-white'
+                className='w-48 border p-1 rounded text-white outline-none focus:outline-none focus:ring-0'
                 type="number"
                 placeholder='In Inch'
                 value={h}
