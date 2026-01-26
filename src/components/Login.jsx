@@ -15,8 +15,8 @@ export default function Login() {
     };
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-            <div className='bg-white h-[80vh] w-[68vw] rounded-[2vh] flex items-center justify-center shadow-lg p-2 shadow-2xl border border-[#E0E0E0] shadow-[#E0E0E0]'>
-                <div className='h-[100%] w-[50%] p-10 flex flex-col items-start justify-evenly'>
+            <div className='bg-white h-[80vh] w-[68vw] rounded-[2vh] flex items-center justify-center p-2 shadow-2xl border border-[#E0E0E0] shadow-[#E0E0E0]'>
+                <div className='h-full w-[50%] p-10 flex flex-col items-start justify-evenly'>
                     <img className='h-4 w-15' src={logoForLogin} alt="" />
                     <div>
                         <h1 className='font-bold text-3xl text-[#202322]'>Hello,<br />Welcome Back</h1>
@@ -45,7 +45,7 @@ export default function Login() {
                     </form>
                     <p className='text-[1.5vh] text-[#6E6D7E]'>Don't not have an account? <a href="/signup" className='text-[#7736FF] font-semibold'>Sign up</a></p>
                 </div>
-                <img className='h-[100%] w-[50%] rounded-[1vh]' src={imgurl} alt="" />
+                <img className='h-full w-[50%] rounded-[1vh]' src={imgurl} alt="" />
             </div>
         </div>
     );
