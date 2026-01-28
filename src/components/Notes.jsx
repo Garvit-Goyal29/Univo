@@ -2,8 +2,8 @@ import imgurl from "../assets/logoSBM.png";
 function Notes() {
     return (
         <>
-            <div className="w-full min-h-screen bg-white">
-                <div className="min-h-26 w-full flex items-center text-white bg-linear-to-r from-blue-700 to-blue-400">
+            <div className="w-full min-h-[101vh] bg-white">
+                <div className="min-h-26 flex items-center text-white bg-linear-to-r from-blue-700 to-blue-400">
                     <img src={imgurl} alt="" className="w-22 h-16 ml-5 mr-54" />
                     <div className="flex flex-col items-center justify-center">
                         <h1 className="text-6xl font-bold">Notes Area</h1>

@@ -1,10 +1,10 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logoMMM from "../assets/logoMMM.png"
 import heroM from "../assets/heroM.png"
 import './Home.css'
 import ScrollProgramBar from "./ScrollProgramBar";
-import Login from "./Login";
+
 function Home() {
     const [num, setNum] = useState(0);
     useEffect(() => {
@@ -15,31 +15,28 @@ function Home() {
                 }
                 return prevNum + 1;
             });
-        }, 0);
+        },5);
 
         return () => clearInterval(interval);
     }, []);
-    const [dis, setdis] = useState("block");
-    const [showLogin, setShowLogin] = useState("none");
-    function addlogin() {
-        setdis("none");        // Home hide
-        setShowLogin("block"); // Login show
-    }
 
     return (
         <>
             <ScrollProgramBar />
-            <div style={{ display: showLogin }}>
-                <Login />
-            </div>
-            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white" style={{ display: dis }} >
+            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white">
                 <div className="w-full h-28 flex justify-between items-center pl-9 pr-9">
                     <img src={logoMMM} alt="" className="h-12 w-auto" />
                     <div className="flex gap-1 items-center justify-center">
-                        <button onClick={addlogin}
-                            className='text-purple-400 text-sm font-sans rounded-2xl font-bold hover:text-black duration-300'>Login</button>
+                        <Link to="/login"
+                            className="text-purple-400 text-sm font-bold hover:text-black">
+                            Login
+                        </Link>
                         <p className="text-purple-400 font-bold">/</p>
-                        <button className='bg-purple-400 p-2 text-sm font-sans rounded-xl font-bold hover:bg-black hover:text-purple-400 duration-300 ease-in'>Sign-up</button>
+
+                        <Link to="/signup"
+                            className="bg-purple-400 p-2 text-sm rounded-xl font-bold hover:bg-black hover:text-purple-400">
+                            Sign-up
+                        </Link>
                     </div>
                 </div>
                 <div className="flex w-full h-full items-center justify-evenly gap-10 pl-8 mt-10">
@@ -62,7 +59,7 @@ function Home() {
                 </div>
 
                 <div className="w-220 h-[45vh] mt-[2vh] flex items-center justify-center">
-                    <div className="relative block group ml-15">
+                    <div className="relative block group">
                         <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
                         <div className="w-220 transition text-purple-400 border-2 titlediv border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
                             <div className="p-6">
@@ -118,7 +115,7 @@ function Home() {
 
             </div>
 
-            <div className="w-full mx-auto px-8 py-16" style={{ display: dis }}>
+            <div className="w-full mx-auto px-8 py-16">
                 <div className="mb-14">
                     <h2 className="text-4xl font-bold text-purple-400 mb-4">About UNIVO</h2>
                     <p className="text-black leading-relaxed w-full">
@@ -179,7 +176,7 @@ function Home() {
 
             </div>
 
-            <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between" style={{ display: dis }}>
+            <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
 
                 {/* Top / Identity */}
                 <div className="flex flex-col items-center justify-center pt-2">

@@ -8,7 +8,7 @@
 .divhover{
     background-color: #262626;
 }
-.divhover:hover button{
+.divhover:hover link{
     color: #C27AFF;
 }
 .logoImgSB{
@@ -16,4 +16,7 @@
 }
 .lnk{
     background-color: #0A66C1;
+}
+.homebtn:hover a {
+    color: #C27AFF;
 }

@@ -14,8 +14,8 @@ export default function Login() {
         console.log('Login attempt:', { email, password });
     };
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-            <div className='bg-white h-[80vh] w-[68vw] rounded-[2vh] flex items-center justify-center p-2 shadow-2xl border border-[#E0E0E0] shadow-[#E0E0E0]'>
+        <div className="bg-[#E0E0E0] flex flex-col items-center justify-center min-h-[101vh]">
+            <div className='bg-white h-[80vh] w-[68vw] rounded-[2vh] flex items-center justify-center p-2 shadow-2xl'>
                 <div className='h-full w-[50%] p-10 flex flex-col items-start justify-evenly'>
                     <img className='h-4 w-15' src={logoForLogin} alt="" />
                     <div>
