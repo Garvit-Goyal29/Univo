@@ -1,12 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logoMMM from "../assets/logoMMM.png"
 import heroM from "../assets/heroM.png"
 import './Home.css'
 import ScrollProgramBar from "./ScrollProgramBar";
+import { UserIcon } from "@heroicons/react/24/solid";
 
 function Home() {
     const [num, setNum] = useState(0);
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
     useEffect(() => {
         const interval = setInterval(() => {
             setNum(prevNum => {
@@ -15,10 +25,15 @@ function Home() {
                 }
                 return prevNum + 1;
             });
-        },5);
+        }, 5);
 
         return () => clearInterval(interval);
     }, []);
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        setUser(null);
+        navigate("/login");
+    };
 
     return (
         <>
@@ -26,18 +41,43 @@ function Home() {
             <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white">
                 <div className="w-full h-28 flex justify-between items-center pl-9 pr-9">
                     <img src={logoMMM} alt="" className="h-12 w-auto" />
-                    <div className="flex gap-1 items-center justify-center">
-                        <Link to="/login"
-                            className="text-purple-400 text-sm font-bold hover:text-black">
-                            Login
-                        </Link>
-                        <p className="text-purple-400 font-bold">/</p>
+                    <div className="flex items-center gap-4 border-2 border-purple-400 rounded-2xl p-2">
+                        {user ? (
+                            <>
+                                <div className="flex flex-col text-left">
+                                    <div className="flex items-center justify-start gap-1">
+                                        <UserIcon className="h-4 w-4 text-purple-500" />
+                                        <p className="font-semibold text-sm text-black">{user.name}</p>
+                                    </div>
+                                    <p className="text-xs text-gray-500">{user.email}</p>
+                                </div>
 
-                        <Link to="/signup"
-                            className="bg-purple-400 p-2 text-sm rounded-xl font-bold hover:bg-black hover:text-purple-400">
-                            Sign-up
-                        </Link>
+                                <button
+                                    onClick={handleLogout}
+                                    className="bg-linear-to-r from-[#7736FF] to-[#B35EFA] hover:bg-linear-to-r hover:from-[#B35EFA] hover:to-[#7736FF] text-white px-3 py-1 rounded-lg text-sm duration-300 font-bold"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    to="/login"
+                                    className="text-purple-400 text-sm font-bold hover:text-black"
+                                >
+                                    Login
+                                </Link>
+                                <p className="text-purple-400 font-bold">/</p>
+                                <Link
+                                    to="/signup"
+                                    className="bg-purple-400 p-2 text-sm rounded-xl font-bold hover:bg-black hover:text-purple-400"
+                                >
+                                    Sign-up
+                                </Link>
+                            </>
+                        )}
                     </div>
+
                 </div>
                 <div className="flex w-full h-full items-center justify-evenly gap-10 pl-8 mt-10">
                     <div className="w-full pl-32">

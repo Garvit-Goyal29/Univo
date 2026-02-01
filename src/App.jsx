@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Sideb from "./components/Sideb";
 import Home from "./components/Home";
 import Login from "./components/Login";
