@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import bgimg from '../assets/signImage.png';
 import { signupUser } from "../api/signup";
-import { loginUser } from '../api/auth';
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 import Loader from './Loader';
 function Signup() {
     const [name, setName] = useState("");

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BoltIcon, AcademicCapIcon, HeartIcon, ArrowTrendingUpIcon, HomeIcon } from "@heroicons/react/24/outline";
 import imgurl from "../assets/logoSBM.png";
 import logoC from "../assets/logoContact.png";
@@ -10,10 +10,14 @@ function Sideb() {
             <div className="h-screen w-1/5 shadow-xl/50 flex flex-col items-center justify-evenly bg-[#171717] fixed">
                 <img src={imgurl} alt="Logo" className="w-14 mx-auto logoImgSB" />
                 <div className="w-full gap-2 flex flex-col items-center">
-                    <Link to="/" className="text-xl homebtn bg-[#262626] w-36 p-1 rounded flex items-center justify-start text-white font-bold">
-                        <HomeIcon className="w-5 h-5 mr-1 mr-5 text-white" />
-                        Home
-                    </Link>
+                    <NavLink to="/" className={({ isActive }) => `text-xl homebtn ${isActive ? "text-[#C27AFF]" : "text-white"} bg-[#262626] w-36 p-1 rounded flex items-center justify-start font-bold`}>
+                        {({ isActive }) =>
+                            <>
+                                <HomeIcon className={`w-5 h-5 mr-5 ${isActive ? "text-[#c27aff] w-5 h-5 mr-5 " : "text-white"}`} />
+                                Home
+                            </>
+                        }
+                    </NavLink>
 
                     <div className="w-full flex flex-col items-center">
                         <div className="flex justify-start items-center hbtnwh w-36 p-1 rounded">
@@ -24,18 +28,26 @@ function Sideb() {
                             <div className="h-full w-0.5 bg-white" style={{ backgroundColor: "#262626" }}>
                             </div>
                             <div className="flex flex-col items-center gap-1 ml-1 mt-1 max-h-60 opacity-100 ">
-                                <Link to="/sgpac" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                <NavLink to="/sgpac"
+                                    className={({ isActive }) => `hbtn text-center ${isActive ? "text-[#C27AFF] bg-[#262626]" : "text-white"} w-28 p-2 text-xs font-semibold rounded`}
+                                >
                                     SGPA Calculator
-                                </Link>
-                                <Link to="/cgpac" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                </NavLink>
+                                <NavLink to="/cgpac"
+                                    className={({ isActive }) => `hbtn text-center ${isActive ? "text-[#C27AFF] bg-[#262626]" : "text-white"} w-28 p-2 text-xs font-semibold rounded`}
+                                >
                                     CGPA Calculator
-                                </Link>
-                                <Link to="/cgpap" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                </NavLink>
+                                <NavLink to="/cgpap"
+                                    className={({ isActive }) => `hbtn text-center ${isActive ? "text-[#C27AFF] bg-[#262626]" : "text-white"} w-28 p-2 text-xs font-semibold rounded`}
+                                >
                                     CGPA Predictor
-                                </Link>
-                                <Link to="/notes" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                </NavLink>
+                                <NavLink to="/notes"
+                                    className={({ isActive }) => `hbtn text-center ${isActive ? "text-[#C27AFF] bg-[#262626]" : "text-white"} w-28 p-2 text-xs font-semibold rounded`}
+                                >
                                     Notes Area
-                                </Link>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -49,16 +61,18 @@ function Sideb() {
                             <div className="h-full w-0.5 bg-white" style={{ backgroundColor: "#262626" }}>
                             </div>
                             <div className="flex flex-col items-center gap-1 ml-1 mt-1 transition-all duration-30 max-h-60 opacity-100 ">
-                                <Link to="/bmi" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
-                                    BMI Calculator
-                                </Link>
-                                <Link to="/bmi" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                <NavLink to="/bmi"
+                                    className={({ isActive }) => `hbtn text-center ${isActive ? "text-[#C27AFF] bg-[#262626]" : "text-white"} w-28 p-2 text-xs font-semibold rounded`}
+                                >
+                                    Bmi Calculator
+                                </NavLink>
+                                <Link className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
                                     Coming Soon
                                 </Link>
-                                <Link to="/bmi" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                <Link className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
                                     Coming Soon
                                 </Link>
-                                <Link to="/bmi" className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
+                                <Link className="hbtn text-center w-28 p-2 text-xs font-semibold text-white rounded">
                                     Coming Soon
                                 </Link>
                             </div>

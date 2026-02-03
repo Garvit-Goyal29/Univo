@@ -13,14 +13,13 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     setError("");
 
     if (!email || !password) {
       setError("Please fill in all fields");
       return;
     }
-
+    setLoading(true);
     try {
       const data = await loginUser(email, password);
 
