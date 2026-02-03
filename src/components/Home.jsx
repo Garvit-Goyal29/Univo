@@ -38,14 +38,14 @@ function Home() {
     return (
         <>
             <ScrollProgramBar />
-            <div className="w-full min-h-screen flex flex-col items-center justify-evenly bg-white">
-                <div className="w-full h-28 flex justify-between items-center pl-9 pr-9">
-                    <img src={logoMMM} alt="" className="h-12 w-auto" />
-                    <div className="flex items-center gap-4 border-2 border-purple-400 rounded-2xl p-2">
+            <div className="w-full flex flex-col items-center bg-white">
+                <div className="w-full min-h-[10vh] flex flex-col sm:flex-row justify-between items-center px-4 sm:px-9 py-3">
+                    <img src={logoMMM} alt="" className="h-10 sm:h-12 w-auto" />
+                    <div className="flex items-center gap-3 border-2 border-purple-400 rounded-2xl p-2">
                         {user ? (
                             <>
                                 <div className="flex flex-col text-left">
-                                    <div className="flex items-center justify-start gap-1">
+                                    <div className="flex items-center gap-1">
                                         <UserIcon className="h-4 w-4 text-purple-500" />
                                         <p className="font-semibold text-sm text-black">{user.name}</p>
                                     </div>
@@ -54,34 +54,35 @@ function Home() {
 
                                 <button
                                     onClick={handleLogout}
-                                    className="bg-linear-to-r from-[#7736FF] to-[#B35EFA] hover:bg-linear-to-r hover:from-[#B35EFA] hover:to-[#7736FF] text-white px-3 py-1 rounded-lg text-sm duration-300 font-bold"
+                                    className="bg-linear-to-r from-[#7736FF] to-[#B35EFA]
+                       hover:from-[#B35EFA] hover:to-[#7736FF]
+                       text-white px-3 py-1 rounded-lg text-sm font-bold"
                                 >
                                     Logout
                                 </button>
                             </>
                         ) : (
                             <>
-                                <Link
-                                    to="/login"
-                                    className="text-purple-400 text-sm font-bold hover:text-black"
-                                >
+                                <Link to="/login" className="text-purple-400 text-sm font-bold">
                                     Login
                                 </Link>
-                                <p className="text-purple-400 font-bold">/</p>
+                                <span className="text-purple-400 font-bold">/</span>
                                 <Link
                                     to="/signup"
-                                    className="bg-purple-400 p-2 text-sm rounded-xl font-bold hover:bg-black hover:text-purple-400"
+                                    className="bg-purple-400 px-3 py-1 text-sm rounded-xl font-bold
+                       hover:bg-black hover:text-purple-400"
                                 >
                                     Sign-up
                                 </Link>
                             </>
                         )}
                     </div>
-
                 </div>
-                <div className="flex w-full h-full items-center justify-evenly gap-10 pl-8 mt-10">
-                    <div className="w-full pl-32">
-                        <p className="text-3xl font-bold leading-tight">
+
+                {/* HERO SECTION */}
+                <div className="flex flex-col-reverse md:flex-row w-full items-center justify-between gap-10 mt-15">
+                    <div className="w-full text-center md:text-left md:pl-20">
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight">
                             All{" "}
                             <span className="text-purple-400 typing">Student tools</span>
                             <span className="text-purple-400 blink">|</span>
@@ -89,32 +90,46 @@ function Home() {
                             one smart place.
                         </p>
                     </div>
-                    <div className="heroWrapper w-full pl-40 relative">
-                        <div className="heroMB w-full h-40 rounded-l-full"></div>
-                        <img src={heroM} alt="" className="imghero h-56 drop-shadow-[0_0_6px_rgba(0,0,0,1)] w-auto absolute bottom-0 right-14" />
+                    <div className="relative flex justify-center w-full md:pl-24">
+                        <div className="heroMB w-full h-32 sm:h-40 rounded-l-full"></div>
+                        <img
+                            src={heroM}
+                            alt=""
+                            className="h-40 sm:h-48 md:h-56 w-auto drop-shadow-[0_0_6px_rgba(0,0,0,1)] static md:absolute md:bottom-0 md:right-14"
+                        />
                     </div>
                 </div>
-
-                <div className="flex items-center justify-start mt-2 pl-7 text-start w-220">
-                    <p className="text-3xl font-bold text-[#FFC632]">{num}+ {"Users"}</p>
+                <div className="flex justify-center md:justify-start
+                  mt-6 px-4 md:px-16 w-full">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#FFC632]">
+                        {num}+ Users
+                    </p>
                 </div>
 
-                <div className="w-220 h-[45vh] mt-[2vh] flex items-center justify-center">
-                    <div className="relative block group">
+                <div className="w-full max-w-full px-4 md:px-10 mt-10 flex justify-center">
+                    <div className="relative block group w-full">
                         <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
-                        <div className="w-220 transition text-purple-400 border-2 titlediv border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
+                        <div className="w-full transition text-purple-400 border-2 border-black
+                      rounded-lg group-hover:-translate-x-2
+                      group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
                             <div className="p-6">
-                                <p className="mb-4 text-5xl font-bold title">UNIVO</p>
-                                <p className="mt-1 max-w-4xl text-lg">Your Academic Control Panel — a smart utility platform built to help students calculate, track,
-                                    and manage their academic life efficiently.</p>
+                                <p className="mb-4 text-3xl sm:text-4xl font-bold">UNIVO</p>
+                                <p className="text-base sm:text-lg max-w-4xl">
+                                    Your Academic Control Panel — a smart utility platform built to help students calculate,
+                                    track, and manage their academic life efficiently.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="w-full flex flex-col items-center justify-evenly bg-white">
-                    <p className="text-4xl font-bold inline text-purple-400 mb-5 w-220">FEATURES</p>
-                    <div className="w-220 flex items-center justify-between">
+                {/* FEATURES */}
+                <div className="w-full flex flex-col items-center mt-16 px-4 md:px-10">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-400 mb-8">
+                        FEATURES
+                    </p>
+
+                    <div className="flex items-center w-full justify-center gap-3 flex-wrap">
                         <div className="relative block group  ">
                             <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
                             <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
@@ -152,9 +167,12 @@ function Home() {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
             </div>
+
 
             <div className="w-full mx-auto px-8 py-16">
                 <div className="mb-14">
@@ -216,7 +234,6 @@ function Home() {
                 </div>
 
             </div>
-
             <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
 
                 {/* Top / Identity */}
@@ -228,18 +245,14 @@ function Home() {
                         Learn • Build • Improve
                     </p>
                 </div>
-
-                {/* Middle / Info */}
                 <div className="flex w-full h-[60%] justify-evenly p-5 text-sm text-gray-400">
-
-                    <div className="w-[31%]">
+                    <div className="flex-1 px-3">
                         <h3 className="text-white mb-2 text-lg font-semibold">About</h3>
                         <p>
                             B.Tech student building web applications using React & Tailwind CSS.
                         </p>
                     </div>
-
-                    <div className="w-[31%]">
+                    <div className="flex-1 px-3">
                         <h3 className="text-white mb-2 text-lg font-semibold">Tech Stack</h3>
                         <ul className="space-y-1">
                             <li><a href="https://react.dev/" className="hover:text-purple-300 transition">React</a></li>
@@ -247,8 +260,7 @@ function Home() {
                             <li><a href="https://tailwindcss.com/" className="hover:text-purple-300 transition">Tailwind CSS</a></li>
                         </ul>
                     </div>
-
-                    <div className="w-[31%] text-gray-400 text-sm">
+                    <div className="flex-1 px-3 text-gray-400 text-sm">
                         <h3 className="text-white mb-2 text-lg font-semibold">Contact</h3>
                         <p className="mb-1">
                             Open to feedback, suggestions & opportunities
@@ -259,11 +271,7 @@ function Home() {
                             garvitpersonal29557@gmail.com
                         </a>
                     </div>
-
-
                 </div>
-
-                {/* Bottom / Copyright */}
                 <div className="border-t border-neutral-800 p-3 text-center text-xs text-white">
                     © {new Date().getFullYear()} Garvit Goyal. All rights reserved.
                 </div>

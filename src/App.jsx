@@ -11,11 +11,11 @@ import Bmic from "./components/Bmic";
 
 function App() {
   return (
-    <div className="flex">
-      <div className="w-1/5">
+    <div className="flex flex-row justify-center min-h-screen w-full">
+      <div className="hidden md:block md:w-1/5">
         <Sideb />
       </div>
-      <div className="w-4/5 min-h-screen">
+      <div className="w-full md:w-4/5 min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -27,6 +27,7 @@ function App() {
           <Route path="/bmi" element={<Bmic />} />
         </Routes>
       </div>
+
     </div>
   );
 }
