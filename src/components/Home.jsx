@@ -235,7 +235,7 @@ function Home() {
 
             </div>
 
-            <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
+            <footer className="h-[45vh] md:h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
 
                 {/* Top / Identity */}
                 <div className="flex flex-col items-center justify-center pt-2">
@@ -246,14 +246,15 @@ function Home() {
                         Learn • Build • Improve
                     </p>
                 </div>
-                <div className="flex flex-col md:flex-row w-full h-[60%] justify-evenly p-5 text-sm text-gray-400">
-                    <div className="flex-1 px-3">
+                
+                <div className="flex flex-col md:flex-row w-full h-[100%] justify-evenly p-5 text-sm text-gray-400">
+                    <div className="md:flex-col md:items-start md:justify-center px-3">
                         <h3 className="text-white mb-2text-lg font-semibold">About</h3>
                         <p className="">
                             B.Tech student building web applications using React & Tailwind CSS.
                         </p>
                     </div>
-                    <div className="flex-1 px-3">
+                    <div className="md:flex-col md:items-start md:justify-center px-3">
                         <h3 className="text-white mb-2 text-lg font-semibold">Tech Stack</h3>
                         <ul className="space-y-1">
                             <li><a href="https://react.dev/" className="hover:text-purple-300 transition">React</a></li>
@@ -261,7 +262,7 @@ function Home() {
                             <li><a href="https://tailwindcss.com/" className="hover:text-purple-300 transition">Tailwind CSS</a></li>
                         </ul>
                     </div>
-                    <div className="flex-1 px-3 text-gray-400 text-sm">
+                    <div className="md:flex-col md:items-start md:justify-center px-3 text-gray-400 text-sm">
                         <h3 className="text-white mb-2 text-lg font-semibold">Contact</h3>
                         <p className="mb-1">
                             Open to feedback, suggestions & opportunities
