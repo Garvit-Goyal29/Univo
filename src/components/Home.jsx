@@ -129,7 +129,7 @@ function Home() {
                         FEATURES
                     </p>
 
-                    <div className="flex items-center w-full justify-center gap-3 flex-wrap">
+                    <div className="flex align-center gap-2 w-full justify-evenly flex-wrap">
                         <div className="relative block group  ">
                             <span className="absolute inset-0 border-2 border-black border-dashed rounded-lg"></span>
                             <div className="w-50 transition text-purple-400 border-2 border-black rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2 hover:bg-purple-400 hover:text-black">
@@ -234,6 +234,7 @@ function Home() {
                 </div>
 
             </div>
+
             <footer className="h-[40vh] bg-[#171717] border-t border-neutral-800 flex flex-col justify-between">
 
                 {/* Top / Identity */}
@@ -245,10 +246,10 @@ function Home() {
                         Learn • Build • Improve
                     </p>
                 </div>
-                <div className="flex w-full h-[60%] justify-evenly p-5 text-sm text-gray-400">
+                <div className="flex flex-col md:flex-row w-full h-[60%] justify-evenly p-5 text-sm text-gray-400">
                     <div className="flex-1 px-3">
-                        <h3 className="text-white mb-2 text-lg font-semibold">About</h3>
-                        <p>
+                        <h3 className="text-white mb-2text-lg font-semibold">About</h3>
+                        <p className="">
                             B.Tech student building web applications using React & Tailwind CSS.
                         </p>
                     </div>
